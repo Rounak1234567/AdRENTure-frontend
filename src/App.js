@@ -1,6 +1,6 @@
 
 import './App.css';
-import {Route,BrowserRouter, Routes, Navigate} from "react-router-dom";
+import {Route,BrowserRouter, Routes} from "react-router-dom";
 import { Home } from './pages/Home';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
@@ -12,23 +12,23 @@ import {UserBookings} from './pages/UserBookings';
 function App() {
 
 
-  function ProtectedRoute(props)
-{
+//   function ProtectedRoute(props)
+// {
 
 
-    if(localStorage.getItem('user'))
-    {
-      return( <Routes>
-        <Route {...props}/>
-      </Routes>
+//     if(localStorage.getItem('user'))
+//     {
+//       return( <Routes>
+//         <Route {...props}/>
+//       </Routes>
       
-      )
-    }
-    else{
-      return <Navigate to='/login'/>
-    }
+//       )
+//     }
+//     else{
+//       return <Navigate to='/login'/>
+//     }
 
-}
+// }
   return (
     <div className="App">
       <BrowserRouter>

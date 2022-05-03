@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, Dropdown, Button, Space, Row, Col } from "antd";
+import { Menu, Dropdown, Button, Row, Col } from "antd";
 import { Link } from 'react-router-dom'
 
 function DefaultLayout(props) {
@@ -46,7 +46,7 @@ function DefaultLayout(props) {
                         <div className="d-flex justify-content-between">
                             <h1 ><b><Link to='/' style={{ color: 'orangered' }}>AdRENTure</Link></b></h1>
 
-                            <Dropdown overlay={menu} placement="bottomCenter">
+                            <Dropdown overlay={menu} placement="bottom">
                                 <Button>{user.username}</Button>
                             </Dropdown>
                         </div>

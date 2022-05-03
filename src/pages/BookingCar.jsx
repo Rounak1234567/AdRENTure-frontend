@@ -9,7 +9,7 @@ import moment from "moment";
 
 
 
-import AOS from 'aos';
+//import AOS from 'aos';
 
 import 'aos/dist/aos.css'; 
 
@@ -29,20 +29,20 @@ function BookingCar() {
 
 
   useEffect(() => {
-    if (cars.length == 0) {
+    if (cars.length === 0) {
       dispatch(getAllCars());
       console.log(cars)
     } else {
-      setcar(cars.find((o) => o._id == carid));
+      setcar(cars.find((o) => o._id === carid));
     }
-  }, [cars]);
+  }, [cars, dispatch, carid]);
 
   useEffect(() => {
     setTotalAmount(totalHours * car.rentPerHour);
     if (driver) {
       setTotalAmount(totalAmount + 50 * totalHours);
     }
-  }, [driver, totalHours]);
+  }, [driver, totalHours,car.rentPerHour,totalAmount]);
 
   function loadScript(src) {
     return new Promise((resolve) => {
@@ -124,7 +124,7 @@ function BookingCar() {
         style={{ minHeight: "90vh" }}
       >
         <Col lg={10} sm={24} xs={24} className='p-3'>
-          <img src={car.image} className="carimg2 bs1 w-100" data-aos='flip-left' data-aos-duration='1500'/>
+          <img src={car.image} alt="" className="carimg2 bs1 w-100" data-aos='flip-left' data-aos-duration='1500'/>
         </Col>
 
         <Col lg={10} sm={24} xs={24} className="text-right">
