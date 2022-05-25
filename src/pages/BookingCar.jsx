@@ -87,9 +87,11 @@ function BookingCar() {
       driverRequired : driver
     }
 
+    
+
     //http://localhost:2345/api/bookings/bookcar/${totalAmount}`
 
-		const data = await fetch(`http://localhost:2345/api/bookings/bookcar/${totalAmount}`, { method: 'POST',  headers: {'Content-Type': 'application/json'},body: JSON.stringify(bookingData) }).then((t) =>
+		const data = await fetch(`https://adrenturebackend.herokuapp.com/api/bookings/bookcar/${totalAmount}`, { method: 'POST',  headers: {'Content-Type': 'application/json'},body: JSON.stringify(bookingData) }).then((t) =>
 			t.json()
 		)
 
