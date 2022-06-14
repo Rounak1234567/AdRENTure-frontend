@@ -7,6 +7,17 @@ body {
   background-color: #B0BEC5;
 }
 
+body {
+  margin: auto;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

@@ -11,24 +11,8 @@ import {UserBookings} from './pages/UserBookings';
 
 function App() {
 
+  let user = JSON.parse(localStorage.getItem("user"))
 
-//   function ProtectedRoute(props)
-// {
-
-
-//     if(localStorage.getItem('user'))
-//     {
-//       return( <Routes>
-//         <Route {...props}/>
-//       </Routes>
-      
-//       )
-//     }
-//     else{
-//       return <Navigate to='/login'/>
-//     }
-
-// }
   return (
     <div className="App">
       <BrowserRouter>
@@ -37,7 +21,7 @@ function App() {
         <Route path='/' element ={<Home/>}/>
         <Route path='/login' element ={<Login/>}/>
         <Route path='/register' element ={<Register/>}/>
-        <Route path='/booking/:carid/' element ={<BookingCar/>}/>
+        <Route path='/booking/:carid/' element ={user ? <BookingCar/> : <Login/>}/>
         <Route path='/userbookings' element ={<UserBookings/>}/>
       </Routes>
       

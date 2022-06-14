@@ -42,7 +42,7 @@ function BookingCar() {
     if (driver) {
       setTotalAmount(totalAmount + 50 * totalHours);
     }
-  }, [driver, totalHours,car.rentPerHour,totalAmount]);
+  }, [driver, totalHours,car.rentPerHour]);
 
   function loadScript(src) {
     return new Promise((resolve) => {
