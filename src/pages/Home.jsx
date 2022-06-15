@@ -74,7 +74,7 @@ const Home = ()=>{
 
             <Slider />
 
-            <h1 >Select Date and Time to Check the available cars</h1>
+            <h1 className='selectDate'>Select Date and Time to Check Available cars</h1>
 
              <Row className='mt-3' justify='center'>
                  
@@ -100,8 +100,8 @@ const Home = ()=>{
                                <div className="car-content d-flex align-items-center justify-content-between">
 
                                     <div className='text-left pl-2'>
-                                        <p>{car.name}</p>
-                                        <p> Rent Per Hour {car.rentPerHour} /-</p>
+                                        <p className='rph'>{car.name}</p>
+                                        <p className='rph'> Rent Per Hour {car.rentPerHour} /-</p>
                                     </div>
 
                                     <div>

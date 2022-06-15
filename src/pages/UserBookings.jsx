@@ -17,25 +17,25 @@ function UserBookings() {
   return (
     <DefaultLayout>
         {loading && (<Spinner />)}
-      <h3 className="text-center mt-2">My Bookings</h3>
+      <h3 className="text-center mt-2 rph">My Bookings</h3>
     
-      <Row justify="center" gutter={16}>
+      <Row justify="center" gutter={16} >
         <Col lg={16} sm={24}>
          
             {bookings.filter(o=>o.user===user._id).map((booking) => {
-             return <Row gutter={16} className="bs1 mt-3 text-left">
-                <Col lg={6} sm={24}>
-                    <p><b>{booking.car.name}</b></p>
-                    <p>Total hours : <b>{booking.totalHours}</b></p>
-                    <p>Rent per hour : <b>{booking.car.rentPerHour}</b></p>
-                    <p>Total amount : <b>{booking.totalAmount}</b></p>
+             return <Row gutter={16} className="bs1 mt-3 text-left header" >
+                <Col lg={6} sm={24} >
+                    <p className="rph"><b className="rph">{booking.car.name}</b></p>
+                    <p className="rph">Total hours : <b>{booking.totalHours}</b></p>
+                    <p className="rph">Rent per hour : <b className="rph">{booking.car.rentPerHour}</b></p>
+                    <p className="rph">Total amount : <b className="rph">{booking.totalAmount}</b></p>
                 </Col>
 
                 <Col lg={12} sm={24}>
-                <p>Transaction Id : <b>{booking.transactionId}</b></p>
-                <p>From: <b>{booking.bookedTimeSlots.from}</b></p>
-                <p>To: <b>{booking.bookedTimeSlots.to}</b></p>
-                <p>Date of booking: <b>{moment(booking.createdAt).format('MMM DD yyyy')}</b></p>
+                
+                <p className="rph">From: <b className="rph">{booking.bookedTimeSlots.from}</b></p>
+                <p className="rph">To: <b className="rph">{booking.bookedTimeSlots.to}</b></p>
+                <p className="rph">Date of booking: <b className="rph">{moment(booking.createdAt).format('MMM DD yyyy')}</b></p>
                 </Col>
 
                 <Col lg={6} sm={24} className='text-right'>

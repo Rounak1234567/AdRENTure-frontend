@@ -1,6 +1,7 @@
 import React from "react";
 import { Menu, Dropdown, Button, Row, Col } from "antd";
 import { Link } from 'react-router-dom'
+import Footer from "./Footer/Footer";
 
 function DefaultLayout(props) {
     const user = JSON.parse(localStorage.getItem('user')) || []
@@ -32,13 +33,13 @@ function DefaultLayout(props) {
         </Menu>
     );
     return (
-        <div>
+        <div className="def">
             <div className="header bs1">
                 <Row gutter={16} justify='center'>
                     <Col lg={20} sm={24} xs={24}>
                         <div className="d-flex justify-content-between">
                             <h1 ><b><Link to='/' style={{ color: 'orangered' }}>AdRENTure</Link></b></h1>
-
+                            
                             <Dropdown overlay={menu} placement="bottom">
                                 <Button>{user.username}</Button>
                             </Dropdown>
@@ -48,6 +49,7 @@ function DefaultLayout(props) {
 
             </div>
             <div className="content">{props.children}</div>
+            <Footer/>
         </div>
     );
 }

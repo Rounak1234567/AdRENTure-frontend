@@ -131,17 +131,19 @@ function BookingCar() {
 
         <Col lg={10} sm={24} xs={24} className="text-right">
           <Divider type="horizontal" dashed>
-            Car Info
+            <h3 className="rph">Car Info</h3>
+            
           </Divider>
           <div style={{ textAlign: "right" }}>
-            <p>{car.name}</p>
-            <p>{car.rentPerHour} Rent Per hour /-</p>
-            <p>Fuel Type : {car.fuelType}</p>
-            <p>Max Persons : {car.capacity}</p>
+            <p className="rph">{car.name}</p>
+            <p className="rph">{car.rentPerHour} Rent Per hour /-</p>
+            <p className="rph">Fuel Type : {car.fuelType}</p>
+            <p className="rph">Max Persons : {car.capacity}</p>
           </div>
 
-          <Divider type="horizontal" dashed>
-            Select Time Slots
+          <Divider type="horizontal" dashed >
+            <p className="rph">Select Time Slots</p>
+            
           </Divider>
           <RangePicker
             showTime={{ format: "HH:mm" }}
@@ -150,7 +152,7 @@ function BookingCar() {
           />
           <br />
           <button
-            className="btn1 mt-2"
+            className="btn1 mt-2 rph"
             onClick={() => {
               setShowModal(true);
             }}
@@ -159,13 +161,13 @@ function BookingCar() {
           </button>
           {from && to && (
             <div>
-              <p>
-                Total Hours : <b>{totalHours}</b>
+              <p className="rph">
+                Total Hours : <b className="rph">{totalHours}</b>
               </p>
-              <p>
-                Rent Per Hour : <b>{car.rentPerHour}</b>
+              <p className="rph">
+                Rent Per Hour : <b className="rph">{car.rentPerHour}</b>
               </p>
-              <Checkbox
+              <Checkbox 
                 onChange={(e) => {
                   if (e.target.checked) {
                     setdriver(true);
@@ -174,10 +176,11 @@ function BookingCar() {
                   }
                 }}
               >
-                Driver Required
+                <p className="rph">Driver Required</p>
+                
               </Checkbox>
 
-              <h3>Total Amount : {totalAmount}</h3>
+              <h3 className="rph">Total Amount : {totalAmount}</h3>
 
               <Link to={"/userbookings"}><button className="btn1"
                 onClick={displayRazorpay}
